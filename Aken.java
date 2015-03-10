@@ -22,6 +22,7 @@ JFrame frame;
 File pilt = new File("C:/Users/Getu/Desktop/screenshot.png");
 BufferedImage image = ImageIO.read(pilt);
 BufferedImage img;
+String hiir = "";
 
 
 	void randomImage() throws Exception{
@@ -64,7 +65,15 @@ BufferedImage img;
 	    	  Cursor c = toolkit.createCustomCursor(image , new Point(frame.getX(), frame.getY()), "img");
 	    	  frame.setCursor (c);
 	    }
+	    else if(e.getButton() == MouseEvent.BUTTON2) {
+	    	String hiir = "Pomm";
+	    	Graphics g = frame.getGraphics();
+	    	Toolkit toolkit = Toolkit.getDefaultToolkit();
+	    	Image image = toolkit.getImage("C:/Users/Kalvar/Desktop/pomm2.gif");
+	    	Cursor c = toolkit.createCustomCursor(image , new Point(frame.getX(), frame.getY()), "img");
+	    	frame.setCursor (c);
 	}
+}
 	
 		Aken() throws Exception{
         JLabel label = new JLabel(new ImageIcon(image));
