@@ -23,8 +23,10 @@ import javax.swing.JLabel;
 public class Aken extends JFrame implements MouseListener, ActionListener {
     //kõik erinevad kursori pildid on siin listis
     ArrayList<String> pilt_list  = new ArrayList<String>(Arrays.asList(
+        //haamer cracki asemele 
             "C:\\Users\\Kasutaja\\OneDrive\\TARTU ÜLIKOOL\\OOP\\IntelliJ projects\\src\\projekt\\crack.gif",
-            "C:\\Users\\Kasutaja\\OneDrive\\TARTU ÜLIKOOL\\OOP\\IntelliJ projects\\src\\projekt\\pomm2.gif"));
+            "C:\\Users\\Kasutaja\\OneDrive\\TARTU ÜLIKOOL\\OOP\\IntelliJ projects\\src\\projekt\\pomm2.gif",
+            "C:/Users/Kalvar/Desktop/vpüss.png"));
 
     JFrame frame;
     File pilt = new File("C:\\Users\\Kasutaja\\OneDrive\\TARTU ÜLIKOOL\\OOP\\IntelliJ projects\\src\\projekt\\screenshot.png");
@@ -48,6 +50,35 @@ public class Aken extends JFrame implements MouseListener, ActionListener {
                 else if (viimatine_pilt.endsWith("2.gif")) {img = ImageIO.read(new File(Pildid.pomm()));}
             } catch (Exception e1) {}
             g.drawImage(img, asukoht.x - 30, asukoht.y - 30, null);}
+            
+        // kuna koordinaadid on erinevatel relvadel erinevad siis on igale relvale vaja eraldi koordinaate.
+        // Ma lühidalt ei tulnud mul välja, aga pikalt töötab niimodi : 
+        //        if(event.getButton() == MouseEvent.BUTTON1 && viimatine_pilt.endsWith("r.gif")){
+        //            Point asukoht = frame.getMousePosition();
+        //            Graphics g = frame.getGraphics();
+        //            try {
+        //                img = ImageIO.read(new File(Pildid.crack()));
+        //                
+        //            } catch (Exception e1) {}
+        //            g.drawImage(img, asukoht.x - 45, asukoht.y - 45, null);}
+        //    
+        //    if(event.getButton() == MouseEvent.BUTTON1 && viimatine_pilt.endsWith("2.gif")){
+        //        Point asukoht = frame.getMousePosition();
+        //        Graphics g = frame.getGraphics();
+        //        try {
+        //        	img = ImageIO.read(new File(Pildid.pomm()));
+        //        }
+        //        catch (Exception e1) {}
+        //        g.drawImage(img, asukoht.x - 80, asukoht.y - 80, null);}
+        //    
+        //    if(event.getButton() == MouseEvent.BUTTON1 && viimatine_pilt.endsWith("s.png")){
+        //        Point asukoht = frame.getMousePosition();
+        //        Graphics g = frame.getGraphics();
+        //        try {
+        //        	img = ImageIO.read(new File(Pildid.värv()));
+        //        }
+        //        catch (Exception e1) {}
+        //        g.drawImage(img, asukoht.x - 110, asukoht.y - 75, null);}
 
         // vahetab kursori pilti (võtab listist järjest pilte), parem hiireklikk
         else if(event.getButton() == MouseEvent.BUTTON3){
