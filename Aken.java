@@ -37,6 +37,8 @@ public class Aken extends JFrame implements MouseListener, ActionListener {
     String viimatine_pilt;
     int i = 0;
     int list_pikkus = pilt_list.size();
+    int a;
+    int b;
 
 
     public void mousePressed(MouseEvent event) {
@@ -46,40 +48,15 @@ public class Aken extends JFrame implements MouseListener, ActionListener {
             Point asukoht = frame.getMousePosition();
             Graphics g = frame.getGraphics();
             try {
-                if (viimatine_pilt.endsWith("k.gif")) {img = ImageIO.read(new File(Pildid.crack()));}
-                else if (viimatine_pilt.endsWith("2.gif")) {img = ImageIO.read(new File(Pildid.pomm()));}
+    		 if (viimatine_pilt.endsWith("r.gif")) {img = ImageIO.read(new File(Pildid.crack())); 
+    		 a = asukoht.x-45; b = asukoht.y-45;}
+    		 else if (viimatine_pilt.endsWith("2.gif")) {img = ImageIO.read(new File(Pildid.pomm()));
+    		 a = asukoht.x-80; b = asukoht.y - 80;}
+    		 else if (viimatine_pilt.endsWith("s.png")) {img = ImageIO.read(new File(Pildid.värv()));
+    		 a = asukoht.x-110; b = asukoht.y- 75;}
             } catch (Exception e1) {}
-            g.drawImage(img, asukoht.x - 30, asukoht.y - 30, null);}
+            g.drawImage(img, a, b, null);}
             
-        // kuna koordinaadid on erinevatel relvadel erinevad siis on igale relvale vaja eraldi koordinaate.
-        // Ma lühidalt ei tulnud mul välja, aga pikalt töötab niimodi : 
-        //        if(event.getButton() == MouseEvent.BUTTON1 && viimatine_pilt.endsWith("r.gif")){
-        //            Point asukoht = frame.getMousePosition();
-        //            Graphics g = frame.getGraphics();
-        //            try {
-        //                img = ImageIO.read(new File(Pildid.crack()));
-        //                
-        //            } catch (Exception e1) {}
-        //            g.drawImage(img, asukoht.x - 45, asukoht.y - 45, null);}
-        //    
-        //    if(event.getButton() == MouseEvent.BUTTON1 && viimatine_pilt.endsWith("2.gif")){
-        //        Point asukoht = frame.getMousePosition();
-        //        Graphics g = frame.getGraphics();
-        //        try {
-        //        	img = ImageIO.read(new File(Pildid.pomm()));
-        //        }
-        //        catch (Exception e1) {}
-        //        g.drawImage(img, asukoht.x - 80, asukoht.y - 80, null);}
-        //    
-        //    if(event.getButton() == MouseEvent.BUTTON1 && viimatine_pilt.endsWith("s.png")){
-        //        Point asukoht = frame.getMousePosition();
-        //        Graphics g = frame.getGraphics();
-        //        try {
-        //        	img = ImageIO.read(new File(Pildid.värv()));
-        //        }
-        //        catch (Exception e1) {}
-        //        g.drawImage(img, asukoht.x - 110, asukoht.y - 75, null);}
-
         // vahetab kursori pilti (võtab listist järjest pilte), parem hiireklikk
         else if(event.getButton() == MouseEvent.BUTTON3){
             setKursor(pilt_list.get(i));
