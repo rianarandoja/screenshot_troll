@@ -49,7 +49,7 @@ public class esimene_aken implements ActionListener{
         JButton start = new JButton("Alusta mängu!");
         mainPanel.add(start, gbc);
 
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add(mainPanel);
         frame.pack();
         frame.setLocationByPlatform(true);
